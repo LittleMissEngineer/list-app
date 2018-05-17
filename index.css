@@ -129,8 +129,12 @@ font-size: 16px;
 .button2{
     background-color:black;
     color: white;
-    padding: 10px 30px;
-    text-align: center;
+    padding: 0px 5px;
+    text-align:right;
     display: inline-block;
     font-size: 16px;
+    position: absolute;
+    transition: .5s ease;
+    top: 35%;
+    left: 80%;
     }
