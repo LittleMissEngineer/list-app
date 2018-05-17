@@ -1,10 +1,12 @@
 console.log("working")
 
 const app = {
-init: function(classUpdate){
+init(selectors){
+  this.course = []
   this.max = 0
+  this.list = document.querySelector(selectors.listSelector)
 document
-  .querySelector(classUpdate)
+  .querySelector(selectors.classUpdate)
   .addEventListener('submit' , (ev) => {
     ev.preventDefault()
     this.handleSubmit(ev)
@@ -12,7 +14,13 @@ document
 
 },
 
-handleSubmit: function(ev){
+renderListItem(course){
+const item = document.createElement('li')
+item.textContent = course.name
+return item
+},
+
+handleSubmit(ev){
 
 
 const f = ev.target
@@ -21,14 +29,19 @@ const course = {
   name: f.className.value,
 }
 // this.max ++
-console.log(course)
+const item = this.renderListItem(course)
+this.list.appendChild(item)
 f.reset()
 },
 
 }
 
 
-app.init('#studentClass')
+app.init({
+  classUpdate:'#studentClass', 
+  listSelector: '#classSchedules' 
+  // check later if error
+})
 
 
 

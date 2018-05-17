@@ -8,6 +8,11 @@ width: 80%;
 margin: 1rem auto;
 }
 
+header{
+font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+}
+
 #box{
     background-color: lightgrey;
     width: 400px;
