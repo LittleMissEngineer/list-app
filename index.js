@@ -29,7 +29,12 @@ const course = {
   name: f.className.value,
 }
 // this.max ++
+
+
+this.course.push(course)
+
 const item = this.renderListItem(course)
+item.dataset.id = course.id
 this.list.appendChild(item)
 f.reset()
 },
@@ -39,7 +44,7 @@ f.reset()
 
 app.init({
   classUpdate:'#studentClass', 
-  listSelector: '#classSchedules' 
+  listSelector: '#myList' 
   // check later if error
 })
 
