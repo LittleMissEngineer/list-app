@@ -2,18 +2,31 @@ console.log("working")
 
 const app = {
 init: function(classUpdate){
-document.querySelector(classUpdate)
-.addEventListener('submmit' , this.handleSubmit)
+  this.max = 0
+document
+  .querySelector(classUpdate)
+  .addEventListener('submit' , (ev) => {
+    ev.preventDefault()
+    this.handleSubmit(ev)
+  })
 
 },
 
 handleSubmit: function(ev){
-ev.preventDefault()
+
+
 const f = ev.target
-console.log(f.className.value)
+const course = {
+  id: ++this.max,
+  name: f.className.value,
+}
+// this.max ++
+console.log(course)
+f.reset()
 },
 
 }
+
 
 app.init('#studentClass')
 
