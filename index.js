@@ -31,11 +31,11 @@ const course = {
 // this.max ++
 
 
-this.course.push(course)
+this.course.unshift(course)
 
 const item = this.renderListItem(course)
 item.dataset.id = course.id
-this.list.appendChild(item)
+this.list.insertBefore(item , this.list.firstElementChild)
 f.reset()
 },
 
