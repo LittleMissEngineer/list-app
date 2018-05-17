@@ -17,8 +17,8 @@
 <h5>Major: Computer Science</h5>
 <form id ="studentForm"></form>
 <P>
-  <label for="className">Name of class:</label><br>
- <input type = "text" name ="className" autofocus>
+  <label for="classList">List of classes:</label><br>
+ <input type = "text" id ="classList" placeholder="Waiting...">
 </P>
 
 <p>
@@ -33,19 +33,19 @@
 <div class="classSchedule">
 <button class="current">Major Classes</button>
 <div class="classes">
-    <ul style ="list-style-type: none">
+    <ul id = "myList" style ="list-style-type: none">
     <li>CSCI 155</li>
 <li>MATH 190</li>
 <li>CSCI 240</li>
-    </div>
 </ul>
+    </div>
 </div>
 
 <div class="general">
         <button class="generalClasses">Gen Eds</button>
         <div class="gen">
                 <ul style ="list-style-type: none">
-            <li>COMM 100</li>
+            <li id>COMM 100</li>
             </div>
         </ul>
         </div>
