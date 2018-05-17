@@ -6,29 +6,48 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>List App</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel ="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.3/css/foundation.min.css">
     <link rel="stylesheet" href="index.css" />
 
 </head>
 <body>
-
+<header>
 <h1>Welcome to Class Tracker</h1>
 <h3>Please enter which classes this student will take during the school year </h3>
 <h4>Student name: Jimmy Fallon </h4>
-<h5>Major: Computer Science</h5>
-<form id ="studentForm"></form>
+<h4>Major: Computer Science</h4>
+</header>
+
+<form id = "studentClass"
+     action = "">
+<div class="input-group">
+<input  
+    type="text" 
+         class = "input-group-field"
+            placeholder = "Name of class ..."
+            autofocus
+            required
+            >
+<div class = "input-group-button">
+    <button class="button" type = "submit" >Update class</button>
+</div>
+</div>
+</form>
+<!-- </div> -->
+<!-- <form id ="studentForm"></form> -->
 <!-- <P>
   <label for="classList">List of classes:</label><br>
  <input type = "text" id ="classList" placeholder="Waiting...">
 </P> -->
 
-<p>
+<!-- <p>
 <label for="MoG">Major or Gen Ed Class:</label>
-<input type = "text" name ="MoG" placeholder="Enter class...">
-</p>
+<input type = "text" name ="MoG" placeholder="Major or Gen ed class...">
+</p> -->
 
-<button class = "button1" type="submit" onclick ="updateClass()">Update</button>
-    <button class = "button2" type="reset">Clear</button><br>
-  </form><br>
+<!-- <button class = "button1" type="submit" onclick ="updateClass()">Update</button> -->
+    <button class = "button2" type="reset">Clear</button><br><br>
+  <!-- </form><br> -->
 
 <div class="classSchedule">
 <button class="current">Major Classes</button>

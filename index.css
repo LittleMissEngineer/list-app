@@ -3,13 +3,18 @@ body{
     background-image: url(http://imgs.abduzeedo.com/files/wallpapers/wpw364/wp_desktop.jpg);
 }
 
+main{
+width: 80%;
+margin: 1rem auto;
+}
+
 #box{
     background-color: lightgrey;
-    width: 300px;
+    width: 400px;
     border: 25px;
     padding: 25px;
     margin: 25px;
-    height: 480px;
+    height: 600px;
 }
 
 .classSchedule{
@@ -84,7 +89,7 @@ display: block;
     
     }
 
-.classes a:hover {background-color: violet}
+.classes a :hover {background-color: violet}
 
 .gen a:hover {background-color: violet}
 
