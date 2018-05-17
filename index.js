@@ -1,21 +1,38 @@
 console.log("working")
 
-const form = document.querySelector('form#studentForm')
+const app = {
+init: function(classUpdate){
+document.querySelector(classUpdate)
+.addEventListener('submmit' , this.handleSubmit)
 
-function updateClass(){
-    debugger
-var change = document.getElementById("className")
-var li = document.createElement('li')
-//li.text = "Pie"
-var x = document.createTextNode(change)
- li.appendChild(x)
+},
 
- if (change === '') {
-    alert("You must write something!")
-  } else {
-    document.getElementById("myList").appendChild(li)
-  }
-  document.getElementById("className") == ""
+handleSubmit: function(ev){
+ev.preventDefault()
+const f = ev.target
+console.log(f.className.value)
+},
+
+}
+
+app.init('#studentClass')
+
+
+
+// function updateClass(){
+//     debugger
+// var change = document.getElementById("className")
+// var li = document.createElement('li')
+// //li.text = "Pie"
+// var x = document.createTextNode(change)
+//  li.appendChild(x)
+
+//  if (change === '') {
+//     alert("You must write something!")
+//   } else {
+//     document.getElementById("myList").appendChild(li)
+//   }
+//  document.getElementById("className") == ""
 
 //   var span = document.createElement("SPAN");
 //   var txt = document.createTextNode("\u00D7");
@@ -29,6 +46,6 @@ var x = document.createTextNode(change)
 //       div.style.display = "none";
 //     }
 //   }
-}
+
 
 
