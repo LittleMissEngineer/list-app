@@ -17,6 +17,7 @@
 <h4>Student name: Jimmy Fallon </h4>
 <h4>Major: Computer Science</h4>
 </header>
+<main>
 
 <form id = "studentClass"
      action = "">
@@ -25,12 +26,17 @@
     type="text" 
          class = "input-group-field"
             placeholder = "Name of class ..."
-            name = "className"
+            name = "courseName"
             autofocus
             required
             >
 <div class = "input-group-button">
-    <button class="button" type = "submit" >Update class</button>
+    <button 
+        class="button" 
+    type = "submit"
+     >
+     Update class
+    </button>
 </div>
 </div>
 </form>
@@ -48,24 +54,47 @@
 
 <!-- <button class = "button1" type="submit" onclick ="updateClass()">Update</button> -->
     
+<!-- Day 4 hw
+
+make the delete button work
+make fav button chnage the stle of list item in some way, border, color, etc 
+bonus credit- make fav button also change object in array
+id:1
+name:
+fav: true
+
+Mega credit
+add buttons to move up and down list
+buttons change place in array
+
+hyper fighting
+allow users to edit the names in list after added / make span's content editable
+-->
+
+
+
+
   <!-- </form><br> -->
 
 <div id=classSchedules class="classSchedule">
-    <!-- <button class = "button3">Favorite</button> -->
+    
 <button class="current">Major Classes</button>
 <div class="classes">
     <ul id = "myList" style ="list-style-type: none">
-    <li class = "course1">
-        <span class = "course1Name">CSCI 155</span></li>
-        <span class = "actions">
-                <button class = "button2" type="reset">X</button>
-                
+        <li class ="template flick grid-x align-middle">
+    <li class = "course1">CSCI 155</li>
+    <li class = "course2">MATH 190</li>
+    <li class = "course3">CSCI 240</li>
+        <span class = "courseName auto cell"></span>
+        <span class = "actions shrink cell">
+                <button class = "button2" type="reset" onclick= "deleteLi()">X</button>
+                <button class = "button3" type= "fav">!</button>
         </span>
-<li class = "course2">MATH 190</li>
-<li class = "course3">CSCI 240</li>
+    </li>
 </ul>
     </div>
 </div>
+</main>
 
 <!-- <div class="general">
         <button class="generalClasses">Gen Eds</button>

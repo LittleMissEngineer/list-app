@@ -1,82 +1,58 @@
-console.log("working")
-
 const app = {
-init(selectors){
-  this.course = []
-  this.max = 0
-  this.list = document.querySelector(selectors.listSelector)
-document
-  .querySelector(selectors.classUpdate)
-  .addEventListener('submit' , (ev) => {
-    ev.preventDefault()
-    this.handleSubmit(ev)
-  })
+  init(selectors) {
+    this.courses = []
+    this.max = 0
+    this.list = document.querySelector(selectors.listSelector)
+    this.template = document.querySelector(selectors.templateSelector)
 
-},
+    document
+      .querySelector(selectors.formSelector)
+      .addEventListener('submit', ev => {
+        ev.preventDefault()
+        this.handleSubmit(ev)
+      })
+  },
 
-renderListItem(course){
-const item = document.createElement('li')
-item.textContent = course.name
-return item
-},
+  renderListItem(course) {
+      const item = document.createElement('li')
 
-handleSubmit(ev){
+    item.textContent = course.name
+      item.dataset.id = course.id
+      // item
+      //   .querySelector('.courseName')
+      //   .textContent = course.name
+  
+      return item
+    },
 
+    
 
-const f = ev.target
-const course = {
-  id: ++this.max,
-  name: f.className.value,
+  handleSubmit(ev) {
+    const f = ev.target
+    const course = {
+      id: ++this.max,
+      name: f.courseName.value,
+    }
+
+    this.courses.unshift(course)
+
+    const item = this.renderListItem(course)
+    this.list.insertBefore(item, this.list.firstElementChild)
+
+    f.reset()
+  },
 }
-// this.max ++
 
-
-this.course.unshift(course)
-
-const item = this.renderListItem(course)
-item.dataset.id = course.id
-this.list.insertBefore(item , this.list.firstElementChild)
-f.reset()
-},
-
+function deleteLi(){
+var list = document.getElementById("myList")
+list.removeChild(list.childNodes[0])
 }
+
+
 
 
 app.init({
-  classUpdate:'#studentClass', 
-  listSelector: '#myList' 
-  // check later if error
+  formSelector: '#studentClass',
+  listSelector: '#myList',
+  templateSelector: '.course.template',
 })
-
-
-
-// function updateClass(){
-//     debugger
-// var change = document.getElementById("className")
-// var li = document.createElement('li')
-// //li.text = "Pie"
-// var x = document.createTextNode(change)
-//  li.appendChild(x)
-
-//  if (change === '') {
-//     alert("You must write something!")
-//   } else {
-//     document.getElementById("myList").appendChild(li)
-//   }
-//  document.getElementById("className") == ""
-
-//   var span = document.createElement("SPAN");
-//   var txt = document.createTextNode("\u00D7");
-//   span.className = "close";
-//   span.appendChild(txt);
-//   li.appendChild(span);
-
-//   for (i = 0; i < close.length; i++) {
-//     close[i].onclick = function() {
-//       var div = this.parentElement;
-//       div.style.display = "none";
-//     }
-//   }
-
-
-

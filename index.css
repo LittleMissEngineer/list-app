@@ -129,12 +129,30 @@ font-size: 16px;
 .button2{
     background-color:black;
     color: white;
-    padding: 0px 5px;
-    text-align:right;
+    padding: 0px 7px;
+    text-align:center;
     display: inline-block;
-    font-size: 16px;
-    position: absolute;
+    font-size: 7px;
+    /* position: absolute; */
     transition: .5s ease;
     top: 35%;
     left: 80%;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
     }
+    .button3{
+        background-color:purple;
+        color: white;
+        padding: 0px 7px;
+        text-align:right;
+        display: inline-block;
+        font-size: 16px;
+        /* position: absolute; */
+        transition: .5s ease;
+        top: 35%;
+        left: 65%;
+        }
+
+
+
