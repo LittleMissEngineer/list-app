@@ -1,6 +1,6 @@
 const app = {
   init(selectors) {
-    this.courses = []
+    this.flicks = []
     this.max = 0
     this.list = document.querySelector(selectors.listSelector)
     this.template = document.querySelector(selectors.templateSelector)
@@ -13,30 +13,27 @@ const app = {
       })
   },
 
-  renderListItem(course) {
-      const item = document.createElement('li')
+  renderListItem(flick) {
+    const item = this.template.cloneNode(true)
+    item.classList.remove('template')
+    item.dataset.id = flick.id
+    item
+      .querySelector('.flickName')
+      .textContent = flick.name
 
-    item.textContent = course.name
-      item.dataset.id = course.id
-      // item
-      //   .querySelector('.courseName')
-      //   .textContent = course.name
-  
-      return item
-    },
-
-    
+    return item
+  },
 
   handleSubmit(ev) {
     const f = ev.target
-    const course = {
+    const flick = {
       id: ++this.max,
-      name: f.courseName.value,
+      name: f.flickName.value,
     }
 
-    this.courses.unshift(course)
+    this.flicks.unshift(flick)
 
-    const item = this.renderListItem(course)
+    const item = this.renderListItem(flick)
     this.list.insertBefore(item, this.list.firstElementChild)
 
     f.reset()
@@ -44,15 +41,24 @@ const app = {
 }
 
 function deleteLi(){
-var list = document.getElementById("myList")
-list.removeChild(list.childNodes[0])
+  var list = document.getElementById("flickList")
+  list.removeChild(list.childNodes[0])
+  }
+
+  let counter = 0
+function favLi(){
+document.getElementById('flickList').style.backgroundColor = "#A9A9A9"   
+counter = counter + 1
+if(counter > 1){
+ document.getElementById('flickList').style.backgroundColor ="#FFFFFF"
+}
 }
 
-
+  
 
 
 app.init({
-  formSelector: '#studentClass',
-  listSelector: '#myList',
-  templateSelector: '.course.template',
+  formSelector: '#flickForm',
+  listSelector: '#flickList',
+  templateSelector: '.flick.template',
 })
