@@ -13,6 +13,15 @@ const app = {
       })
   },
 
+  removeFlick(flick ,ev){
+const item = ev.target.closest('.flick')
+item.remove()
+
+const i = this.flicks.indexOf(flick)
+this.flicks.splice(i , 1)
+// const id = item.dataset.id
+
+  },
   renderListItem(flick) {
     const item = this.template.cloneNode(true)
     item.classList.remove('template')
@@ -20,6 +29,9 @@ const app = {
     item
       .querySelector('.flickName')
       .textContent = flick.name
+
+      item.querySelector('.button2.button2')
+      .addEventListener('click',this.removeFlick.bind(this,flick ))
 
     return item
   },
@@ -40,18 +52,23 @@ const app = {
   },
 }
 
-function deleteLi(){
-  var list = document.getElementById("flickList")
-  list.removeChild(list.childNodes[0])
-  }
+// function deleteLi(){
+//   var list = document.getElementById("flickList")
+//   list.removeChild(list.childNodes[0])
+//   list.removeChild(list.childNodes[1])
+
+//   }
 
   let counter = 0
-function favLi(){
-document.getElementById('flickList').style.backgroundColor = "#A9A9A9"   
-counter = counter + 1
-if(counter > 1){
- document.getElementById('flickList').style.backgroundColor ="#FFFFFF"
-}
+function favLi(color){
+var color = '#' + color
+document.getElementById('classSchedules').style.background = color
+
+// document.getElementById('highlight').style.backgroundColor = "#00FFFF"
+// counter = counter + 1
+// if(counter > 1){
+//  document.getElementById('flickList').style.backgroundColor ="#FFFFFF"
+// }
 }
 
   
