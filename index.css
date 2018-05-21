@@ -80,8 +80,12 @@ main {
     }
 
     .edit{
-        padding: 9px;
-        margin-top: 10 rem;
+        background-color: black;
+        padding: 10px;
+    }
+
+    .edit:active{
+        background-color: palegreen;
     }
 
     #flickForm{
