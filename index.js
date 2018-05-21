@@ -28,6 +28,29 @@ const item = ev.target.closest('.flick')
 flick.fav = item.classList.toggle('fav')
 
   }
+
+  toggleEditable(flick , ev){
+    const btn = ev.target
+const item = btn.closest('.flick')
+const nameField = item.querySelector('.flickName')
+if(nameField.isContentEditable){
+
+  //Can't edit
+  nameField.contentEditable = false
+  btn.textContent = 'Edit'
+  btn.classList.remove('success')
+
+  //save changes
+  flick.name = nameField.textContent
+} else{
+  nameField.contentEditable = true
+  nameField.focus()
+  btn.textContent = 'save'
+  btn.classList.add('success')
+}
+  }
+
+
   renderListItem(flick) {
     const item = this.template.cloneNode(true)
     item.classList.remove('template')
@@ -41,6 +64,10 @@ flick.fav = item.classList.toggle('fav')
 
 item.querySelector('.button1.button1')
 .addEventListener('click', this.favFlick.bind(this,flick))
+
+item.querySelector('.edit.button')
+.addEventListener('click',this.toggleEditable.bind(this ,flick))
+
 
     return item
   }

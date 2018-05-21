@@ -76,6 +76,12 @@ main {
     .button2{
         background-color: purple;
         padding: 10px;
+        
+    }
+
+    .edit{
+        padding: 9px;
+        margin-top: 10 rem;
     }
 
     #flickForm{
