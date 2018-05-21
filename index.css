@@ -97,3 +97,7 @@ main {
 .actions .button {
   margin-bottom: 0;
 }
+
+.flick.fav{
+    background-color: plum;
+}

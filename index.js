@@ -22,6 +22,12 @@ this.flicks.splice(i , 1)
 // const id = item.dataset.id
 
   }
+
+  favFlick(flick , ev){
+const item = ev.target.closest('.flick')
+flick.fav = item.classList.toggle('fav')
+
+  }
   renderListItem(flick) {
     const item = this.template.cloneNode(true)
     item.classList.remove('template')
@@ -33,6 +39,9 @@ this.flicks.splice(i , 1)
       item.querySelector('.button2.button2')
       .addEventListener('click',this.removeFlick.bind(this,flick ))
 
+item.querySelector('.button1.button1')
+.addEventListener('click', this.favFlick.bind(this,flick))
+
     return item
   }
 
@@ -41,6 +50,7 @@ this.flicks.splice(i , 1)
     const flick = {
       id: ++this.max,
       name: f.flickName.value,
+      fav: false,
     }
 
     this.flicks.unshift(flick)
