@@ -52,6 +52,7 @@ main {
  .classSchedule{
     position: relative;
     display: inline-block;
+
  }
  
  .button{
@@ -90,7 +91,7 @@ main {
 
     #flickForm{
         position: relative;
-        top: 30%;
+        top: 40%;
     }
  
     
@@ -111,3 +112,13 @@ main {
 .flick.fav{
     background-color: plum;
 }
+
+
+.flick:first-child button.move-up,
+.flick:last-child button.move-down {
+  background-color: rgb(48, 173, 90);
+  color: #eee;
+  cursor: not-allowed;
+  padding: 10px;
+}
+

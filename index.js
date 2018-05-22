@@ -57,6 +57,26 @@ if(nameField.isContentEditable){
     }
   }
 
+  moveDown(flick, item) {
+    const i = this.flicks.indexOf(flick)
+
+    if (i < this.flicks.length - 1) {
+      this.moveUp(this.flicks[i + 1], item.nextElementSibling)
+    }
+  }
+
+  moveUp(flick, item) {
+    const i = this.flicks.indexOf(flick)
+
+    if (i > 0) {
+      this.list.insertBefore(item, item.previousElementSibling)
+
+      const previousFlick = this.flicks[i - 1]
+      this.flicks[i - 1] = flick
+      this.flicks[i] = previousFlick
+    }
+  }
+
 
   renderListItem(flick) {
     const item = this.template.cloneNode(true)
@@ -76,6 +96,19 @@ item.querySelector('.button1.button1')
 item.querySelector('.edit.button')
 .addEventListener('click',this.toggleEditable.bind(this ,flick))
 
+item
+      .querySelector('button.move-up')
+      .addEventListener(
+        'click',
+        this.moveUp.bind(this, flick, item)
+      )
+
+    item
+      .querySelector('button.move-down')
+      .addEventListener(
+        'click',
+        this.moveDown.bind(this, flick, item)
+      )
 
     return item
   }
